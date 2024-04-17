@@ -49,9 +49,22 @@ app.get("/getdepts", (req, res) => {
     }
 });
 
+//Get Route for the showing of the creation of Department
+app.get("/createdept", (req, res) => {
+  res.render("createdept");
+})
+
+
 app.post("/createdept", (req, res) => {
-  depts.push({ id: req.body.id, dname: req.body.dname });
-  res.json({ result: "Department Created" });
+  let id = req.body.deptid;
+  let dname = req.body.deptname;
+  let newDept = {
+    id: id,
+    dname: dname
+  };
+  depts.push(newDept);
+  res.redirect("/showdepts")
+  // res.json({ result: "Department Created" });
 });
 
 // //For the cookieParser
