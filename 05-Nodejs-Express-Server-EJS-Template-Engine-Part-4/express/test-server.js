@@ -38,6 +38,7 @@ app.get("/showdepts", (req, res) => {
 var depts = [
   { id: 1, dname: "Leagal" },
   { id: 2, dname: "Tech" },
+  { id: 3, dname: "Software Development" },
 ];
 
 app.get("/getdepts", (req, res) => {
